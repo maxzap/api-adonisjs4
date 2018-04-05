@@ -32,7 +32,7 @@ Factory.blueprint('App/Models/Customer', async (faker) => {
     customer_phone: faker.phone(),
     customer_credit_card: faker.cc({type: 'Mastercard'})
   }
-})
+});
 
 Factory.blueprint('App/Models/Cinema', async (faker) => {
   const cinema_name = faker.company();
@@ -44,4 +44,4 @@ Factory.blueprint('App/Models/Cinema', async (faker) => {
     cinema_seat_capacity: faker.integer({min: 300, max: 1000}),
     cinema_details: faker.sentence({words: 30})
   }
-})
+});
