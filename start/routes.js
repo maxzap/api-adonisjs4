@@ -14,3 +14,25 @@
 */
 
 const Route = use('Route')
+
+Route.group({
+  Route.post('login', 'AuthControler.login');
+  Route.post('register', 'AuthControler.register');
+  Route.put('profile', 'AuthControler.profile').middleware(['auth:jwt']);
+  Route.put('profile', 'AuthControler.profile').middleware(['auth:jwt']);
+
+  Route.get('cinema/:id', 'CinemaController.findCinema');
+  Route.get('cinemas', 'CinemaController.allCinemas');
+  Route.get('genres', 'CinemaController.allGenres');
+
+  Route.get('movies/:cinemaId/byCinema', 'MovieController.byCinema');
+  Route.get('movies/:movieId/byMovie', 'MovieController.byMovie');
+
+  Route.post('booking', 'BookingController.save').middleware(['auth:jwt']);
+  Route.get('booking/last', 'BookingController.last').middleware(['auth:jwt']);
+  Route.get('booking/all', 'BookingController.all').middleware(['auth:jwt']);
+
+
+
+
+}).prefix('api/v1');
