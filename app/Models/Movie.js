@@ -11,7 +11,7 @@ class Movie extends Model {
     return null;
   }
 
-  movies () {
+  genres () {
       return this.belongsToMany('App/Models/Genre');
   }
 
